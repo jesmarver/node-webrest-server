@@ -38,7 +38,7 @@ export class Server {
         this.app.use(express.static(this.publicPath));
 
         
-        // * Cualquier ruta no definida termina aquí
+        // * Cualquier ruta no definida termina aquí (SPA)
         this.app.get('*', (req, res) => {
             const indexPath = path.join(__dirname + `../../../${this.publicPath}/index.html`);
             res.sendFile(indexPath);

@@ -6,7 +6,11 @@
     ```
     npm i
     ```
-3. Arrancar el proyecto
+3. Iniciar base de datos
+    ```
+    docker compose up -d
+    ```
+4. Arrancar el proyecto
     ```
     npm run dev
     ```
