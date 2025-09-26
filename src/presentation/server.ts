@@ -1,6 +1,7 @@
 import express, { Router } from 'express';
 import path from 'path';
 import { AppRoutes } from './routes';
+import compression from 'compression';
 
 interface Options {
     port: number;
@@ -30,6 +31,7 @@ export class Server {
 
         this.app.use(express.json());
         this.app.use(express.urlencoded({extended: true})); // x-www-url-encoded
+        this.app.use(compression()); // Comprime las respuestas para que tengan menor tamaño (Buenas prácticas de express)
 
         // * Routes
         this.app.use(this.routes);
